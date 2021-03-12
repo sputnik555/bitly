@@ -50,12 +50,11 @@ def main():
         except requests.exceptions.HTTPError:
             print('Ошибка получения статистики кликов')
     else:
-        # try:
+        try:
             bitlink = shorten_link(token, url)
             print('Битлинк:', bitlink)
-        # except requests.exceptions.HTTPError:
-        #     print('Ошибка при формировании нового битлинка')
-        #     print(requests.exceptions.HTTPError)
+        except requests.exceptions.HTTPError:
+             print('Ошибка при формировании нового битлинка')
 
 if __name__ == '__main__':
     main()
